@@ -115,3 +115,44 @@ workspace.user.info.query([user_id]).then(res => {
 });
 
 ...
+
+```
+
+2. `workspace.user.get_all`:
+
+may be helpful for statics, for data analytics, for business plans
+so let's make it more usefull with create Excel table from this script
+
+```
+import workspace from './workspace/init.js';
+
+workspace.user.get_all.query().then(res => {
+    res.to_excel('./reports/');
+}, err => {});
+```
+
+3. `workspace.bank.send_money`:
+
+so, I have the bank app and wanna create transfer function, but I must save data constistence.
+if **user1** don't have enough money all next queries must be blocked.
+
+How can I do it?
+
+```
+import workspace from './workspace/init.js';
+
+...
+
+workspace.bank.send_money.transaction([
+    [5432, 200], // minus 200 dollars from user[id=5432]
+    [2799, 200], // plus 200 dollars for user[id=2799]
+    [5432, 2799, 200], // create transaction record about this operation really existed
+]).then(res => {
+    // we guaranteed all query procceded correctly
+}, err => {
+    // so now it's error, maybe not enough money or user[id=2799] have been blocked and deleted
+});
+
+...
+
+```

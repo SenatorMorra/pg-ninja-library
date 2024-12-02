@@ -96,12 +96,10 @@ export default workspace;
 
 Now we have everything for start work with our workspace, so let's imagine, which functionality I can prepare depends on these SQL queries.
 
-1. `workspace.user.info`
+### `workspace.user.info`:
 
 user's account info <br>
 we can use it fo user's perconal account for show information
-
-## `account.js`:
 
 ```
 import workspace from './workspace/init.js';
@@ -118,7 +116,7 @@ workspace.user.info.query([user_id]).then(res => {
 
 ```
 
-2. `workspace.user.get_all`:
+### `workspace.user.get_all`:
 
 may be helpful for statics, for data analytics, for business plans
 so let's make it more usefull with create Excel table from this script
@@ -131,7 +129,7 @@ workspace.user.get_all.query().then(res => {
 }, err => {});
 ```
 
-3. `workspace.bank.send_money`:
+### `workspace.bank.send_money`:
 
 so, I have the bank app and wanna create transfer function, but I must save data constistence.
 if **user1** don't have enough money all next queries must be blocked.

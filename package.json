@@ -1,1 +1,33 @@
-
+{
+  "name": "pg-ninja-library",
+  "version": "1.0.0",
+  "description": "Node.js library for creating a workspace for a PostgreSQL project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SenatorMorra/pg-ninja-library.git"
+  },
+  "keywords": [
+    "pg",
+    "postgres",
+    "postgresql",
+    "database",
+    "testing",
+    "workspace",
+    "study",
+    "pg-ninja"
+  ],
+  "author": "Senator Morra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SenatorMorra/pg-ninja-library/issues"
+  },
+  "homepage": "https://github.com/SenatorMorra/pg-ninja-library#readme",
+  "dependencies": {
+    "pg-ninja": "^1.3.0"
+  },
+  "type": "module"
+}
